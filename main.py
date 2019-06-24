@@ -17,7 +17,8 @@ import logging
 # APP FLASK
 app_v1 = Blueprint('api', __name__, url_prefix='/api/v1')
 
-api = Api(app_v1, version='1.0', title='Woven Gutter Feature Toggle API', description='Woven feature flag management.')
+api = Api(app_v1, version='1.0', title='Woven Gutter Feature Toggle API',
+          description='Woven feature flag management.')
 ns = api.namespace('', description='SWITCH')
 
 app = Flask(__name__)

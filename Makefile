@@ -17,13 +17,23 @@ ${XUNIT_DIR}:
 lint:
 	python setup.py flake8
 
+release_test:
+	rm -rf dist build woven_gutter_gae.egg-info .eggs
+	python setup.py sdist bdist_wheel
+	twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+
 release:
-	git tag $(VERSION)
-	git push origin $(VERSION)
+	rm -rf dist build woven_gutter_gae.egg-info .eggs
+	git tag $(VERSION) -f
+	git push origin $(VERSION) -f
 	git push origin master
-	python setup.py sdist upload
+	python setup.py sdist bdist_wheel
+	twine upload --repository-url https://upload.pypi.org/legacy/ dist/*
 
 watch:
 	bundle exec guard
+
+deploy:
+	gcloud app deploy -v $(APP_VERSION) --project=$(PROJECT) -q --no-promote
 
 .PHONY: test test-xunit lint release watch

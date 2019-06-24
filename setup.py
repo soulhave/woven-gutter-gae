@@ -32,12 +32,13 @@ if 'flake8' in sys.argv[1:]:
     setup_requires.append('dont-fudge-up')
 
 setup(
-    name='gutter',
-    version='0.6.0',
-    author='DISQUS',
-    author_email='opensource@disqus.com',
-    url='http://github.com/disqus/gutter',
-    description='Client to gutter feature switches backend',
+    name='woven-gutter-gae',
+    version='0.0.4',
+    author='DISQUS, soulhave',
+    author_email='opensource@disqus.com, soulhave@yahoo.com.br',
+    url='https://github.com/soulhave/woven-gutter-gae',
+    description='Client to gutter feature switches backend, '
+                'using GCP (Datastore and appengine)',
     packages=find_packages(exclude=["tests"]),
     zip_safe=False,
     install_requires=[
@@ -45,6 +46,10 @@ setup(
         'jsonpickle',
         'werkzeug',
         'six',
+        'flask',
+        'flask-restplus',
+        'google-cloud-logging',
+        'google-cloud-datastore'
     ],
     setup_requires=setup_requires,
     namespace_packages=['gutter'],
@@ -53,7 +58,7 @@ setup(
     extras_require={'test': tests_require},
     test_suite='nose.collector',
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'Intended Audience :: System Administrators',
         'Operating System :: OS Independent',

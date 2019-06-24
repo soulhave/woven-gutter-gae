@@ -2,4 +2,3 @@ flask==1.0.3
 flask-restplus==0.12.1
 google-cloud-logging==1.11.0
 google-cloud-datastore==1.8.0
-itertools
