@@ -1,5 +1,7 @@
 import os
 
+from flask_cors import CORS
+
 from gutter.settings import manager_datastore as manager
 from flask import Flask, Blueprint
 from flask_restplus import Resource, Api, fields
@@ -13,9 +15,11 @@ import logging
 # logging.setLevel(logging.INFO)
 # logging.addHandler(handler)
 
-
 # APP FLASK
 app_v1 = Blueprint('api', __name__, url_prefix='/api/v1')
+
+# CORS
+cors = CORS(app_v1, resources=r"/api/*")
 
 api = Api(app_v1, version='1.0', title='Woven Gutter Feature Toggle API',
           description='Woven feature flag management.')
@@ -24,7 +28,6 @@ ns = api.namespace('', description='SWITCH')
 app = Flask(__name__)
 app.register_blueprint(app_v1)
 app.config['RESTPLUS_MASK_SWAGGER'] = False
-
 
 switch = api.model('switch', {
     'id': fields.String(

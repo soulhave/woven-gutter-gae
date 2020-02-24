@@ -1,0 +1,25 @@
+<div class="feature-spinner">
+    <mat-spinner color="accent" diameter="40" *ngIf="showLoad"></mat-spinner>
+</div>
+<div class="feature-empty" *ngIf="!showLoad && features.length == 0">
+    <mat-card>No features found!</mat-card>
+</div>
+<cdk-virtual-scroll-viewport itemSize="50" class="feature-scroll-viewport" *ngIf="!showLoad">
+    <!-- <div *cdkVirtualFor="let item of features" class="feature-scroll-viewport-content">
+        {{item.id}}
+    </div> -->
+    <mat-card *cdkVirtualFor="let item of features" class="feature-toggle-line">
+        <div>
+            <div class="feature-toggle-line-item">
+                <span>{{getFeature(item)}}</span>
+            </div>
+            <div class="feature-toggle-line-item-parent" *ngIf="hasParent(item)">
+                <span>Parent flag: {{getFeatureParent(item)}}</span>
+            </div>
+        </div>
+        <span class="spacer"></span>
+        <button *ngIf="isOn(item)" mat-mini-fab color="accent" (click)="onPatchFeature(item, 'DISABLED')">On</button>
+        <button *ngIf="isOff(item)" mat-mini-fab color="primary" (click)="onPatchFeature(item, 'GLOBAL')">Off</button>
+        <mat-spinner *ngIf="isSync(item)" color="accent" diameter=40></mat-spinner>
+    </mat-card>
+</cdk-virtual-scroll-viewport>

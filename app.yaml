@@ -1,5 +1,17 @@
 runtime: python37
 service: feature
 
+handlers:
+  # javascript, html or css files
+  - url: /(.*\.(html|js|css|ico))$
+    secure: always
+    static_files: build/static/\1
+    upload: build/static/.*\.(html|js|css|ico)
+  # Main page
+  - url: /
+    mime_type: text/html
+    static_files: build/static/index.html
+    upload: build/static/index.html
+
 #vpc_access_connector:
 #  name: "projects/cit-cloud-team-devops/locations/us-central1/connectors/connector"

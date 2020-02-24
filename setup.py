@@ -33,7 +33,7 @@ if 'flake8' in sys.argv[1:]:
 
 setup(
     name='woven-gutter-gae',
-    version='0.0.4',
+    version='1.0.0',
     author='DISQUS, soulhave',
     author_email='opensource@disqus.com, soulhave@yahoo.com.br',
     url='https://github.com/soulhave/woven-gutter-gae',

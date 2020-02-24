@@ -12,8 +12,6 @@
 # below:
 .git
 .gitignore
-dist
-build
 .eggs
 tests
 woven_gutter_gae.egg-info
@@ -24,3 +22,5 @@ woven_gutter_gae.egg-info
 __pycache__/
 # Ignored by the build system
 /setup.cfg
+Pipfile*
+/frontend*

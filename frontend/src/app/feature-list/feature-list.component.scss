@@ -1,0 +1,51 @@
+.feature-toggle-line {
+    // border: 1px dashed red;
+    height: 1.5em;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.feature-toggle-line-item{
+    font-size: 2.0vh;
+}
+
+.feature-toggle-line-item-parent{
+    font-size: 1.0vh;
+}
+
+.feature-scroll-viewport {
+    height: 85vh;
+    width: 95vw;
+    // border: 1px solid red;
+}
+
+.feature-scroll-viewport-content{
+    height: 50px;
+    width: 100%;
+}
+
+.feature-spinner{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+
+.feature-error-card {
+    // padding: 0px !important;
+}
+
+
+.feature-error-card-content {
+    background-color: #ef5350;
+}
+
+.feature-error-card-actions {
+    // background-color: #ef5350;
+    background-color: white;
+}
+
+mat-card {
+    margin-top: .5em;
+    // background-color: #ef5350;
+}
