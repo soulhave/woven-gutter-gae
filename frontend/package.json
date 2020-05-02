@@ -7,6 +7,7 @@
     "build": "ng build",
     "build:dev": "ng build --configuration=development",
     "build:qa": "ng build --configuration=qa",
+    "build:e2e": "ng build --configuration=e2e",
     "build:stg": "ng build --configuration=staging",
     "build:prod": "ng build --configuration=production",
     "test": "ng test",

@@ -12,6 +12,9 @@ handlers:
     mime_type: text/html
     static_files: build/static/index.html
     upload: build/static/index.html
+  # API
+  - url: /api/v1/.*
+    script: auto
 
 #vpc_access_connector:
 #  name: "projects/cit-cloud-team-devops/locations/us-central1/connectors/connector"
